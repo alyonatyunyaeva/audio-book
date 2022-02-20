@@ -2,16 +2,18 @@ import React, { Fragment, memo, useContext } from 'react'
 import PropTypes from 'prop-types'
 
 import './BookCard.css'
-import Context from '../App/Context'
+import Context from '../../App/Context'
 import { useRoute } from 'react-router5'
-import { page } from '../router/constants'
+import { page } from '../../router/constants'
 
 const BookCard = ({ book }) => {
   const { identifier, title, creator, runtime } = book
   const { router } = useRoute()
+  const { setBookData } = useContext(Context)
 
   const goToBook = () => {
     router.navigate(page.book, { id: identifier })
+    setBookData(book)
   }
 
   return (
@@ -20,7 +22,7 @@ const BookCard = ({ book }) => {
         <div
           className="book-card--cover"
           style={{
-            backgroundImage: `url("https://archive.org/services/img/${book.identifier}")`,
+            backgroundImage: `url("https://archive.org/services/img/${identifier}")`,
           }}
         ></div>
       </div>

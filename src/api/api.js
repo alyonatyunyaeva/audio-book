@@ -28,7 +28,7 @@ const commonParams = {
 export const getBooksList = async (title = '', creator = '') => {
   console.log('title', title, 'creator', creator)
   return (
-    await axios.get('services/search/v1/scrape', {
+    await axios.get('api/services/search/v1/scrape', {
       params: {
         ...commonParams,
         q: makeQuery(title, creator),
@@ -36,6 +36,11 @@ export const getBooksList = async (title = '', creator = '') => {
     })
   ).data
 }
-export const getBook = async (id = 90) => {
-  return (await axios.get(`rss/${id}`, {})).data
+export const getBook = async (bookId) => {
+  return (await axios.get(`/api/metadata/${bookId}/files`)).data
 }
+
+
+// https://ia600801.us.archive.org/32/items/1-2pedro_reina_valera_1710_librivox/1-2pedro_01_rva_128kb.mp3
+// https://www.archive.org/download/1-2pedro_reina_valera_1710_librivox/1-2pedro_01_rva_128kb.mp3
+// id book / id track

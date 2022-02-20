@@ -1,6 +1,6 @@
 import { Fragment, memo, useContext, useEffect, useState } from 'react'
-import Context from '../App/Context'
-import { getBooksList } from '../api/api'
+import Context from '../../App/Context'
+import { getBooksList } from '../../api/api'
 
 const param = {
   title: 'title',

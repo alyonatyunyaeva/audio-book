@@ -1,7 +1,7 @@
 import { memo, useContext } from 'react'
 import BookCard from './BookCard'
 import './BookList.css'
-import Context from '../App/Context'
+import Context from '../../App/Context'
 
 const BookList = () => {
   const { bookList } = useContext(Context)

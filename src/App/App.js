@@ -2,8 +2,8 @@ import { Fragment, memo, useContext, useEffect } from 'react'
 
 import { Link, useRoute } from 'react-router5'
 
-import BookListPage from '../features/BookListPage'
-
+import BookListPage from '../pages/BookListPage'
+import BookPage from '../pages/BookPage'
 import { page } from '../router/constants'
 import Context from './Context'
 
@@ -20,11 +20,7 @@ const App = () => {
   return (
     <Fragment>
       {activePage === page.bookList && <BookListPage></BookListPage>}
-      {activePage === page.book && <div>я пук</div>}
-      {/*<Link routeName={page.bookList}>*/}
-      {/*  <BookListPage></BookListPage>*/}
-      {/*</Link>*/}
-      {/*<Link routeName={page.book}>привет я пук</Link>*/}
+      {activePage === page.book && <BookPage/>}
     </Fragment>
   )
 }

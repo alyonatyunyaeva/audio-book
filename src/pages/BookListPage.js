@@ -1,7 +1,7 @@
 import { Fragment, memo, useContext, useEffect, useState } from 'react'
 import Context from '../App/Context'
-import BookList from '../features/BookList'
-import SearchPanel from './SearchPanel'
+import BookList from '../features/BookList/BookList'
+import SearchPanel from '../features/SearchBookList/SearchPanel'
 import { getBooksList } from '../api/api'
 
 const BookListPage = () => {
